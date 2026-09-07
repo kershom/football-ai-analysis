@@ -34,3 +34,44 @@ class PlayerResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class MatchCreate(BaseModel):
+    name: str
+    match_date: str
+
+    home_team_id: int
+    away_team_id: int
+
+    format: str
+
+    duration: int
+    halves: int
+
+    rules: Optional[str] = None
+
+    home_color: Optional[str] = None
+    away_color: Optional[str] = None
+
+
+class MatchResponse(BaseModel):
+    id: int
+
+    name: str
+    match_date: str
+
+    home_team_id: int
+    away_team_id: int
+
+    format: str
+
+    duration: int
+    halves: int
+
+    rules: Optional[str] = None
+
+    home_color: Optional[str] = None
+    away_color: Optional[str] = None
+
+    class Config:
+        from_attributes = True
