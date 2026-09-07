@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from .database import engine, Base
 from . import models
-from .routes import players
+from .routes import players, teams
 
 
 Base.metadata.create_all(bind=engine)
@@ -16,6 +16,7 @@ app = FastAPI(
 
 
 app.include_router(players.router)
+app.include_router(teams.router)
 
 
 @app.get("/")
