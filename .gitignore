@@ -28,3 +28,6 @@ data/processed/*
 # OS
 .DS_Store
 Thumbs.db
+
+# Local database
+football.db
